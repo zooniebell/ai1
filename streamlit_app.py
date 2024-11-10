@@ -1,33 +1,58 @@
+# streamlit_app.py
 import streamlit as st
 import pandas as pd
 
-# 타이틀 설정
-st.title("나의 첫번째 서비스")
+# 1. 제목
+st.title("Streamlit 기본 예제 페이지")
 
-# 서브타이틀
-st.subheader("GPT 만세!!!!!")
+# 2. 부제목
+st.subheader("이 페이지는 다양한 Streamlit 기능을 보여줍니다.")
 
-# 표 데이터 생성
-data = {
-    '이름': ['홍길동', '이중엽', '조용수'],
-    '나이': [50, 10, 59],
-    '직업': ['학생', '마라토너', '동네건달']
-}
-df = pd.DataFrame(data)
-
-# 표 출력
-st.write("강원사대부고:")
-st.dataframe(df)
-st.write("강원삼대대부고:")
+# 3. 판다스 데이터프레임 기반 표 출력
+df = pd.DataFrame({
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [24, 30, 29],
+    "Country": ["Korea", "USA", "UK"]
+})
+st.write("데이터프레임 예제")
 st.dataframe(df)
 
-# HTML 메시지 출력
-st.markdown("""
-    <div style="background-color: lightblue; padding: 10px;">
-        <h3>HTML 스타일링 메시지</h3>
-        <p>내가 아직도 장원재로 보이니 흐흐흐흐흐흐.</p>
+# 4. HTML 활용 예제
+st.write("HTML 예제")
+st.markdown(
+    """
+    <div style="color: blue; font-size: 20px;">
+        HTML을 활용한 예시 텍스트입니다.
     </div>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
-# 추가적인 텍스트
-st.write("하하호호호호호호호호호호ㅗㅎ호ㅗ호호호호호홓")
+# 5. HTML과 CSS 활용 예제
+st.write("HTML과 CSS 예제")
+st.markdown(
+    """
+    <style>
+    .styled-box {
+        padding: 10px;
+        margin: 5px;
+        background-color: lightgreen;
+        border-radius: 5px;
+        color: darkgreen;
+    }
+    </style>
+    <div class="styled-box">
+        HTML과 CSS를 함께 사용하여 스타일링한 박스입니다.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# 6. 이미지 표시
+st.write("이미지 표시 예제")
+st.image("https://i.ibb.co/SN8hMQc/RMjy-Svv-Cwp-UCu-Zlv-NBDr-Ur-1-Di-Jn1-MUw-I713e7qfupo-M-4-G-99-0ag-N-H5se-Wrj-Ft-Z3w-C3u-Q0-BMc71l-P.webp", caption="오타니를 찬양하라!")
+
+# 7. 유튜브 링크 (썸네일 표시)
+st.write("유튜브 동영상 예제")
+st.video("https://www.youtube.com/watch?v=3hNXCbSDBvc")
+
