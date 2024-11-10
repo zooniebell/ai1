@@ -18,6 +18,8 @@ df = pd.DataFrame(data)
 # 표 출력
 st.write("강원사대부고:")
 st.dataframe(df)
+st.write("강원삼대대부고:")
+st.dataframe(df)
 
 # HTML 메시지 출력
 st.markdown("""
