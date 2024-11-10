@@ -1,3 +1,6 @@
+
+#왼족 메뉴 버튼 바꾸기
+
 import streamlit as st
 import pandas as pd
 
@@ -18,13 +21,13 @@ def main():
             font-weight: bold;
         }
         .otani-button {
-            background-color: red;
+            background-color: blue;
         }
         .whitesox-button {
             background-color: black;
         }
         .samsung-button {
-            background-color: blue;
+            background-color: while;
         }
         .menu-button:hover {
             opacity: 0.8;
