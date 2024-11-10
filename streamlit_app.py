@@ -1,49 +1,45 @@
-
-#왼족 메뉴 버튼 바꾸기
-
 import streamlit as st
 import pandas as pd
 
 def main():
-    # 메뉴 HTML/CSS 구성
+    # 사이드바 메뉴 버튼 생성 (HTML+CSS)
     st.sidebar.markdown(
         """
         <style>
         .menu-button {
-            display: block;
+            display: inline-block;
             margin: 10px 0;
-            padding: 15px;
+            padding: 15px 20px;
             text-align: center;
             border-radius: 10px;
-            text-decoration: none;
             color: white;
             font-size: 20px;
             font-weight: bold;
+            cursor: pointer;
         }
         .otani-button {
-            background-color: blue;
+            background-color: red;
         }
         .whitesox-button {
             background-color: black;
         }
         .samsung-button {
-            background-color: while;
+            background-color: blue;
         }
         .menu-button:hover {
-            opacity: 0.8;
+            opacity: 0.9;
         }
         </style>
         """,
         unsafe_allow_html=True
     )
 
-    # 메뉴 HTML 생성
-    menu_html = """
-    <a href="?menu=오타니" class="menu-button otani-button">오타니</a>
-    <a href="?menu=화이트삭스" class="menu-button whitesox-button">화이트삭스</a>
-    <a href="?menu=삼성 라이온즈" class="menu-button samsung-button">삼성 라이온즈</a>
-    """
-    st.sidebar.markdown(menu_html, unsafe_allow_html=True)
+    if st.sidebar.button("오타니", key="otani"):
+        st.experimental_set_query_params(menu="오타니")
+    if st.sidebar.button("화이트삭스", key="whitesox"):
+        st.experimental_set_query_params(menu="화이트삭스")
+    if st.sidebar.button("삼성 라이온즈", key="samsung"):
+        st.experimental_set_query_params(menu="삼성 라이온즈")
 
     # URL 매개변수를 읽어 메뉴 선택
     query_params = st.experimental_get_query_params()
@@ -98,13 +94,11 @@ def show_otani_page():
         unsafe_allow_html=True
     )
 
-    # 6. 이미지 표시
     st.write("이미지 표시 예제")
-    st.image("https://i.ibb.co/SN8hMQc/RMjy-Svv-Cwp-UCu-Zlv-NBDr-Ur-1-Di-Jn1-MUw-I713e7qfupo-M-4-G-99-0ag-N-H5se-Wrj-Ft-Z3w-C3u-Q0-BMc71l-P.webp", caption="오타니를 찬양하라!")
+    st.image("https://www.streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png", caption="Streamlit 로고")
 
-    # 7. 유튜브 링크 (썸네일 표시)
     st.write("유튜브 동영상 예제")
-    st.video("https://www.youtube.com/watch?v=3hNXCbSDBvc")
+    st.video("https://www.youtube.com/watch?v=B2iAodr0fOo")
 
 def show_whitesox_page():
     st.title("화이트삭스 페이지")
