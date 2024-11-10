@@ -167,7 +167,37 @@ def show_whitesox_page():
 
 def show_samsung_page():
     st.title("삼성 라이온즈 페이지")
-    st.write("이 페이지는 현재 비어 있습니다.")
+    st.subheader("동적인 페이지 요소 예제")
+
+    # 1. 버튼 클릭 시 이미지 변경
+    st.write("버튼 클릭 시 이미지를 변경해 보세요.")
+    if st.button("이미지 1 보기"):
+        st.image("https://via.placeholder.com/300/09f/fff.png", caption="이미지 1")
+    if st.button("이미지 2 보기"):
+        st.image("https://via.placeholder.com/300/f09/fff.png", caption="이미지 2")
+    
+    # 2. 슬라이더를 통해 값 변화에 따라 데이터 변화
+    st.write("슬라이더를 움직여 데이터를 변경해 보세요.")
+    slider_value = st.slider("값 선택", 1, 100, 50)
+    st.write(f"선택된 값은: {slider_value}")
+
+    # 3. 텍스트 입력에 따라 변경되는 동적 반응
+    st.write("텍스트를 입력해 보세요.")
+    text_input = st.text_input("텍스트 입력", "삼성 라이온즈")
+    if text_input:
+        st.write(f"입력된 텍스트: {text_input}")
+
+    # 4. 스크롤 대신 대체로 Streamlit은 특정 스크롤 이벤트를 처리하지 않지만, 사용자가 선택한 요소에 따라 반응 가능
+    st.write("멀티 선택 상자를 활용한 반응형 UI")
+    options = st.multiselect("이미지 선택", ["이미지 1", "이미지 2", "이미지 3"])
+    for option in options:
+        if option == "이미지 1":
+            st.image("https://via.placeholder.com/300/09f/fff.png", caption="이미지 1")
+        elif option == "이미지 2":
+            st.image("https://via.placeholder.com/300/f09/fff.png", caption="이미지 2")
+        elif option == "이미지 3":
+            st.image("https://via.placeholder.com/300/0f9/fff.png", caption="이미지 3")
+
 
 if __name__ == "__main__":
     main()
