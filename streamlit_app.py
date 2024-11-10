@@ -101,6 +101,8 @@ def show_otani_page():
     st.video("https://www.youtube.com/watch?v=B2iAodr0fOo")
 
 
+#화이트삭스 페이지 함수 변경
+
 def show_whitesox_page():
     st.title("화이트삭스 페이지")
     
@@ -111,14 +113,20 @@ def show_whitesox_page():
     with left_column:
         st.subheader("왼쪽 열: 2x2 이미지 및 동영상")
         
-        # 이미지 1
-        st.image("https://via.placeholder.com/150", caption="이미지 1")
-        # 이미지 2
-        st.image("https://via.placeholder.com/150", caption="이미지 2")
-        # 동영상 1
-        st.video("https://www.youtube.com/watch?v=2Vv-BfVoq4g")  # 예제 URL
-        # 동영상 2
-        st.video("https://www.youtube.com/watch?v=3JZ_D3ELwOQ")  # 예제 URL
+        # 첫 번째 행의 이미지
+        col1, col2 = st.columns(2)
+        with col1:
+            st.image("https://via.placeholder.com/150", caption="이미지 1")
+        with col2:
+            st.image("https://via.placeholder.com/150", caption="이미지 2")
+        
+        # 두 번째 행의 동영상
+        col3, col4 = st.columns(2)
+        with col3:
+            st.video("https://www.youtube.com/watch?v=2Vv-BfVoq4g")  # 예제 URL
+        with col4:
+            st.video("https://www.youtube.com/watch?v=3JZ_D3ELwOQ")  # 예제 URL
+
 
     # 오른쪽 열 (3x3 이미지 및 표)
     with right_column:
