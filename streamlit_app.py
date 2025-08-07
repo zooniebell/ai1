@@ -13,8 +13,8 @@ st.subheader("이 페이지는 다양한 Streamlit 기능을 보여줍니다.")
 
 # 3. 판다스 데이터프레임 기반 표 출력
 df = pd.DataFrame({
-    "Name": ["Alice", "Bob", "Charlie"],
-    "Age": [24, 30, 29],
+    "Name": ["Ann", "Bobby", "Jane"],
+    "Age": [25, 31, 27],
     "Country": ["Korea", "USA", "UK"]
 })
 st.write("데이터프레임 예제")
@@ -41,7 +41,7 @@ st.markdown(
         margin: 5px;
         background-color: lightgreen;
         border-radius: 5px;
-        color: darkgreen;
+        color: pink;
     }
     </style>
     <div class="styled-box">
