@@ -39,9 +39,9 @@ st.markdown(
     .styled-box {
         padding: 10px;
         margin: 5px;
-        background-color: lightgreen;
+        background-color: pink;
         border-radius: 5px;
-        color: pink;
+        color: black;
     }
     </style>
     <div class="styled-box">
